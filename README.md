@@ -1,1 +1,1 @@
-# geolTrail
+# geoTrail
