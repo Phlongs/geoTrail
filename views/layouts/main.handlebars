@@ -141,8 +141,8 @@
 
 	      						google.maps.event.addListener(marker, 'click', (function(marker, i) {
 	        						return function() {
-	        						console.log(o.activities)
-	          						infoWindow.setContent('test');
+	        						console.log(o.activities[0].description)
+	          						infoWindow.setContent(o.activities[0].description);
 	          						infoWindow.open(map, marker);
 	        						}
 	      						})(marker,i));	
