@@ -1,0 +1,12 @@
+body {
+	background-color: black;
+}
+
+#heading {
+	color: white;
+}
+
+a {
+	color: white;
+	font-family: 'Open Sans Condensed', sans-serif;
+}
