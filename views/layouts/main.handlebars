@@ -27,15 +27,20 @@
 	<center>
 	<p><h1 style='font-family: Lobster, cursive;'>GeoTrail</h1></p>
 	<p><h3 style='font-family: Anton, sans-serif;'>Trails within a 25 mile radius from your location</h3></p>
-	<a href='https://biobuild.herokuapp.com/public/userProfile/seilap' class='button'>Seila Phlong</a>
+	
 	</center>
 	</div>
 
 		<div id="map"></div>
 		{{{body}}}
+		
+		<center>
+		<a href='https://biobuild.herokuapp.com/public/userProfile/seilap' class='button'>By: Seila Phlong</a>
+		</center>
 <script>
 
     var map, infoWindow, marker;
+    var pos = {};
     function initMap() {
 
 
@@ -50,7 +55,7 @@
         // Try HTML5 geolocation.
         if (navigator.geolocation) {
           navigator.geolocation.getCurrentPosition(function(position) {
-            var pos = {
+            pos = {
               lat: position.coords.latitude,
               lng: position.coords.longitude
             };
@@ -73,8 +78,8 @@
 
 	      						google.maps.event.addListener(marker, 'click', (function(marker, i) {
 	        						return function() {
-	        						console.log(o.activities[0].description)
-	          						infoWindow.setContent(o.activities[0].description);
+	          						infoWindow.setContent('Info: '+ o.activities[0].description + '<br><br>' + 'Directions: ' + o.directions + '<br><br>'+ 'Rating: ' + o.activities[0].rating + '<br><br>' + '<a href="'+ o.activities[0].url + 
+	          							'">For more info</a>' );
 	          						infoWindow.open(map, marker);
 	        						}
 	      						})(marker,i));	
