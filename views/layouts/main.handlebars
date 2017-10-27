@@ -33,7 +33,7 @@
 
 		<div id="map"></div>
 		{{{body}}}
-		
+
 		<center>
 		<a href='https://biobuild.herokuapp.com/public/userProfile/seilap' class='button'>By: Seila Phlong</a>
 		</center>
@@ -41,6 +41,7 @@
 
     var map, infoWindow, marker;
     var pos = {};
+    var img = './img/hike.png';
     function initMap() {
 
 
@@ -73,7 +74,8 @@
 	      						marker = new google.maps.Marker({
 	        						position: new google.maps.LatLng(o.lat, o.lon),
 	       							map: map,
-	       							title: o.name
+	       							title: o.name,
+	       							icon: img
 	      						});
 
 	      						google.maps.event.addListener(marker, 'click', (function(marker, i) {
@@ -91,7 +93,7 @@
 
 
             infoWindow.setPosition(pos);
-            infoWindow.setContent('Your Location');
+            infoWindow.setContent('You Are Here!');
             infoWindow.open(map);
             map.setCenter(pos);
           }, function() {
